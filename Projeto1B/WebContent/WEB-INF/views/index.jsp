@@ -7,6 +7,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<style>
+body {
+  background-color: lightblue;
+  text-align: center;
+  font-family: "Verdana", Times, Sans-serif;
+}
+   
+</style>
+
 <body>
 		<h3>Bem vindo ao Projeto1!</h3>
 		<div>

@@ -2,27 +2,28 @@ package mvc.model;
 
 public class Notas {
 	
-	private int idAutor;
+	private int id_autor;
 	private String autor;
-	private String nota;
+	private String conteudo;
 	
-	public int getIdAutor() {
-		return idAutor;
-	}
-	public void setIdAutor(int idAutor) {
-		this.idAutor = idAutor;
-	}
+	
 	public String getAutor() {
 		return autor;
 	}
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public String getNota() {
-		return nota;
+	public String getConteudo() {
+		return conteudo;
 	}
-	public void setNota(String nota) {
-		this.nota = nota;
+	public void setConteudo(String conteudo) {
+		this.conteudo = conteudo;
+	}
+	public int getId_autor() {
+		return id_autor;
+	}
+	public void setId_autor(int id_autor) {
+		this.id_autor = id_autor;
 	}
 }
 

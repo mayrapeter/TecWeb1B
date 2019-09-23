@@ -1,7 +1,7 @@
 package mvc.model;
 
 public class Pessoas {
-	private String usuario;
+	private String nome;
 	private String senha;
 
 	public String getSenha() {
@@ -10,11 +10,11 @@ public class Pessoas {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getUsuario() {
-		return usuario;
+	public String getNome() {
+		return nome;
 	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 }

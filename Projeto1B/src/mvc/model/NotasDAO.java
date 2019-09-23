@@ -30,35 +30,35 @@ public class NotasDAO {
 	}
 	
 	public void addNota(Notas nota) throws SQLException {
-		PreparedStatement ps = connection.prepareStatement("INSERT INTO notas (id, nome, nota) VALUES (?,?,?)");
-		int id = nota.getIdAutor();
-		String nome = nota.getAutor();
-		String conteudo = nota.getNota();
-		ps.setInt(1, id);
-		ps.setString(2, nome);
+		PreparedStatement ps = connection.prepareStatement("INSERT INTO notas (id_autor, autor, conteudo) VALUES (?,?,?)");
+		int id_autor = nota.getId_autor();
+		String autor = nota.getAutor();
+		String conteudo = nota.getConteudo();
+		ps.setInt(1, id_autor);
+		ps.setString(2, autor);
 		ps.setString(3, conteudo);
 		ps.execute();
 		ps.close();
 	}
 	
 	public void apagarNota (Notas nota) throws SQLException {
-		PreparedStatement ps = connection.prepareStatement("DELETE FROM notas WHERE id=? AND nome=? AND nota=?;");
-		int id = nota.getIdAutor();
-		String nome = nota.getAutor();
-		String conteudo = nota.getNota();
-		ps.setInt(1, id);
-		ps.setString(2, nome);
+		PreparedStatement ps = connection.prepareStatement("DELETE FROM notas WHERE id_autor=? AND autor=? AND conteudo=?;");
+		int id_autor = nota.getId_autor();
+		String autor = nota.getAutor();
+		String conteudo = nota.getConteudo();
+		ps.setInt(1, id_autor);
+		ps.setString(2, autor);
 		ps.setString(3, conteudo);
 		ps.execute();
 		ps.close();
 	}
 	
-	public void alterarNota (int id, String nome, String nota, String novaNota) throws SQLException {
-		PreparedStatement ps = connection.prepareStatement("UPDATE notas SET " + " nota=? WHERE id=? AND nome=? AND nota=?;");
+	public void alterarNota (int id_autor, String autor, String conteudo, String novaNota) throws SQLException {
+		PreparedStatement ps = connection.prepareStatement("UPDATE notas SET " + " conteudo=? WHERE id_autor=? AND autor=? AND conteudo=?;");
 		ps.setString(1, novaNota);
-		ps.setInt(2, id);
-		ps.setString(3, nome);
-		ps.setString(4, nota);
+		ps.setInt(2, id_autor);
+		ps.setString(3, autor);
+		ps.setString(4, conteudo);
 		ps.execute();
 		ps.close();
 	}
@@ -69,9 +69,9 @@ public class NotasDAO {
 		ResultSet rs = stmt.executeQuery();
 		while (rs.next()) {
 			Notas nota = new Notas();
-			nota.setIdAutor(rs.getInt("id"));
-			nota.setAutor(rs.getString("nome"));
-			nota.setNota(rs.getString("nota"));
+			nota.setId_autor(rs.getInt("id_autor"));
+			nota.setAutor(rs.getString("autor"));
+			nota.setConteudo(rs.getString("conteudo"));
 			notas.add(nota);
 		}
 		rs.close();

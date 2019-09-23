@@ -1,0 +1,31 @@
+.cadastrinho {
+	border-radius: 5px;
+	background-color: lightblue;
+	text-align: center;
+	width: 400px;
+	position: sticky;
+	padding-bottom: 50px;
+}
+
+body {
+  font-family: "Verdana", Times, Sans-serif;
+}
+
+.listinha {
+	border-radius: 5px;
+	background-color: lightgrey;
+	width: 300px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-left: 5px;
+	display: block;
+} 
+
+.nota {
+	font-size: 17px;
+	text-align: left;
+}
+
+.autor {
+	font-size: 10px;
+}

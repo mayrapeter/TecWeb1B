@@ -26,9 +26,9 @@ public class PessoasDAO {
 	}
 
 	public void register(Pessoas pessoa) throws SQLException {
-		String nome = pessoa.getUsuario();
+		String nome = pessoa.getNome();
 		String senha = pessoa.getSenha();
-		PreparedStatement ps = connection.prepareStatement("INSERT INTO pessoa (nome, senha) VALUES (?,?)");
+		PreparedStatement ps = connection.prepareStatement("INSERT INTO pessoas (nome, senha) VALUES (?,?)");
 		ps.setString(1, nome);
 		ps.setString(2, senha);
 		ps.execute();
@@ -39,8 +39,8 @@ public class PessoasDAO {
 
 	public int getID(Pessoas pessoa) throws SQLException {
 		int id = 0;
-		PreparedStatement ps = connection.prepareStatement("SELECT id FROM pessoa WHERE nome = ? AND senha = ?");
-		ps.setString(1, pessoa.getUsuario());
+		PreparedStatement ps = connection.prepareStatement("SELECT id FROM pessoas WHERE nome = ? AND senha = ?");
+		ps.setString(1, pessoa.getNome());
 		ps.setString(2, pessoa.getSenha());
 		ResultSet rs = ps.executeQuery();
 		if(rs.next())
@@ -52,9 +52,9 @@ public class PessoasDAO {
 	}
 
 	public void login(Pessoas pessoa) throws SQLException {
-		String usuario = pessoa.getUsuario();
+		String usuario = pessoa.getNome();
 		String senha = pessoa.getSenha();
-		PreparedStatement ps = connection.prepareStatement("SELECT * FROM pessoa WHERE nome = ? AND senha = ?");
+		PreparedStatement ps = connection.prepareStatement("SELECT * FROM pessoas WHERE nome = ? AND senha = ?");
 		ps.setString(1, usuario);
 		ps.setString(2, senha);
 		ps.execute();

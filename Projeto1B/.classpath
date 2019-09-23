@@ -25,5 +25,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Mayra Peter/Documents/4 SEMESTRE/Tecnologia Web/doen/apache-tomcat-9.0.22/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mayra Peter/Documents/4 SEMESTRE/Tecnologia Web/doen/apache-tomcat-9.0.22/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mayra Peter/Documents/4 SEMESTRE/Tecnologia Web/apache-maven-3.6.2/lib/maven-core-3.6.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

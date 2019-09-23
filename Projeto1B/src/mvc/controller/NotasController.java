@@ -28,20 +28,22 @@ public class NotasController {
 		}
 	
 	@RequestMapping("AlterarNota")
-	public String vaiParaAlterar(@RequestParam (name = "id_autor") String id_autor, @RequestParam (name = "nome_autor") String nome_autor, @RequestParam (name = "nota") String nota, HttpSession session) throws SQLException {
+	public String vaiParaAlterar(@RequestParam (name = "id_autor") String id_autor, @RequestParam (name = "autor") String autor, @RequestParam (name = "conteudo") String conteudo, HttpSession session) throws SQLException {
 		session.setAttribute("id_autor", id_autor);
-		session.setAttribute("nome_autor", nome_autor);
-		session.setAttribute("nota", nota);
+		session.setAttribute("autor", autor);
+		session.setAttribute("conteudo", conteudo);
 		return "alterar";
 		}
 
 	@RequestMapping("AlterarNotaAgora")
 	public String alterarNota(@RequestParam (name = "nova_nota") String nova_nota, HttpSession session) throws SQLException {
 		NotasDAO dao = new NotasDAO();
-		int id_autor = (int)session.getAttribute("id_autor"); 
-		String nome_autor = (String)session.getAttribute("nome_autor");
-		String nota = (String)session.getAttribute("nota");
-		dao.alterarNota(id_autor, nome_autor, nota, nova_nota) ;
+		String id_autor_string = (String)session.getAttribute("id_autor"); 
+		System.out.println(id_autor_string);
+		int id_autor = Integer.valueOf(id_autor_string);
+		String autor = (String)session.getAttribute("autor");
+		String conteudo = (String)session.getAttribute("conteudo");
+		dao.alterarNota(id_autor, autor, conteudo, nova_nota) ;
 		return "notas";
 		}
 	
