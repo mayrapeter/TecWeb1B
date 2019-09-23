@@ -8,6 +8,10 @@ import java.sql.SQLException;
 
 public class PessoasDAO {
 	private Connection connection = null;
+	
+	String url = System.getenv("mysql_url");
+	String user = System.getenv("mysql_user");
+	String password = System.getenv("mysql_password");
 
 	public PessoasDAO() {
 		try {
