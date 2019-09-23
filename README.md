@@ -1,0 +1,14 @@
+# TecWeb1B
+
+ CREATE TABLE Pessoas (
+ id INT NOT NULL AUTO_INCREMENT,
+ nome VARCHAR(32) NOT NULL,
+ senha VARCHAR(32) NOT NULL,
+ PRIMARY KEY (ID)
+);
+
+CREATE TABLE Pessoas (
+ id_autor INT NOT NULL,
+ autor VARCHAR(32) NOT NULL,
+ conteudo VARCHAR(128)
+);
