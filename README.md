@@ -7,7 +7,7 @@
  PRIMARY KEY (ID)
 );
 
-CREATE TABLE Pessoas (
+CREATE TABLE Notas (
  id_autor INT NOT NULL,
  autor VARCHAR(32) NOT NULL,
  conteudo VARCHAR(128)
